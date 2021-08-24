@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scope</title>
 </head>
 <body>
     
@@ -12,6 +12,33 @@
     <script>
         // Global scope
         var message = "hello platzi";
+
+        // Functon scope
+        // la forma dificil:
+        function printNumbers() {
+            for (var i = 0; i < 10; i++) {
+                function eventuallyPrintNumber(n) {
+                    setTimeout(function() {
+                        console.log(n);
+                    }, 100);
+                }
+                eventuallyPrintNumber(i);
+            }
+        }
+        printNumbers();
+        // la forma facil:
+        function printNumbersEasy(i) {
+            setTimeout(() => console.log(i), 1000)
+        }
+        function counter () {
+            for (let i = 0; i < 10; i++) {
+                printNumbersEasy(i);
+            }   
+        }
+        counter();
+
+        // module scope
+        
     </script>
 </body>
 </html>
