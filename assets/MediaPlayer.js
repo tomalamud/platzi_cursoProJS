@@ -22,6 +22,10 @@ function MediaPlayer(config) {
       this.pause();
     }
   };
+
+  MediaPlayer.prototype.toggleSound = function() {
+    this.media.muted = !this.media.muted
+  }
   
   MediaPlayer.prototype._initPlugins = function () {
     this.plugins.forEach(plugin => {

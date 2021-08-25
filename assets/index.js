@@ -6,6 +6,8 @@ const video1 = document.querySelector('#firstVideo');
 const player = new MediaPlayer({ med: video1, plugins: [ new AutoPlay() ] });
 
 // button interactivity
-const button = document.querySelector('button');
-button.onclick = () => player.togglePlay();
+const buttonPlay = document.querySelector('#buttonPlay');
+const buttonSound = document.querySelector('#buttonSound');
 
+buttonPlay.onclick = () => player.togglePlay();
+buttonSound.onclick = () => player.toggleSound();
