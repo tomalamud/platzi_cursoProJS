@@ -1,28 +1,9 @@
-// class
-function MediaPlayer(config) {
-  this.media = config.med;
-}
+import MediaPlayer from './MediaPlayer.js';
+import AutoPlay from './plugins/AutoPlay.js';
 
 // object from class
 const video1 = document.querySelector('#firstVideo');
-const player = new MediaPlayer({ med: video1 });
-
-// class methods
-MediaPlayer.prototype.play = function() {
-  this.media.play();
-};
-
-MediaPlayer.prototype.pause = function() {
-  this.media.pause();
-};
-
-MediaPlayer.prototype.togglePlay = function() {
-  if (this.media.paused) {
-    this.play();
-  } else {
-    this.pause();
-  }
-};
+const player = new MediaPlayer({ med: video1, plugins: [ new AutoPlay() ] });
 
 // button interactivity
 const button = document.querySelector('button');
