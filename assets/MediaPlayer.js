@@ -1,4 +1,5 @@
 // class
+// se crea un prototipo de la clase
 function MediaPlayer(config) {
     this.media = config.med;
     this.plugins = config.plugins || [];
