@@ -24,7 +24,7 @@ const heroMethods = {
   },
 };
 
-function Hero (name) {
+function Hero(name) {
   const hero = {
       name: name
   };
@@ -47,7 +47,7 @@ const heroMethods = {
   },
 };
 
-function Hero (name) {
+function Hero(name) {
     const hero = Object.create(heroMethods);
     hero.name = name;
     
@@ -59,3 +59,26 @@ zelda.saludar();
 
 const link = Hero('link');
 link.saludar();
+
+// Utilizando new (azucar sintáctica) para llevar Hero.prototype al objeto.
+function Hero(name) {
+  // El new hace automáticamente:
+  // const hero = Object.create(heroMethods); 
+  // es como si lo guardara automáticamente en this = Object.create()
+  // Ahora es this.name en vez de hero.name
+  this.name = name;
+  // Automático con el new:
+  // return hero;
+}
+
+Hero.prototype.saludar = function () {
+  console.log(`New: ${this.name}`);
+};
+
+const zelda = new Hero('Zelda');
+zelda.saludar();
+
+const link = new Hero('link');
+link.saludar();
+
+// HERENCIA PROTOTIPAL
