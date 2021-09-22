@@ -27,8 +27,22 @@
     // Propiedades heredadas ej: toString.
     console.log('toString:', zelda.toString);
     // hasOwnProperty (de dónde sale toString o esto?)
-    console.log('zelda.hasOwnProperty("name"):', zelda.hasOwnProperty("name"))
+    console.log(
+        'zelda.hasOwnProperty("name"):', 
+        zelda.hasOwnProperty("name")
+    );
+    console.log(
+        'zelda.hasOwnProperty("saludar"):', 
+        zelda.hasOwnProperty("saludar")
+    );
     // Inspeccionamos el prototipo del Zelda.
+    const prototypeOfZelda = Object.getPrototypeOf(zelda);
+    prototypeOfZelda === Hero.prototype // true.
+    Hero.prototype.fight = function () {
+      console.log("FIGHT!");
+    };
+    zelda.fight(); // FIGHT!
+    zelda.hasOwnProperty("fight"); // false (zelda no tiene esa)
     // Inspeccionamos el prototipo del Hero.
     // Inspeccionamos el prototipo del Object.
     </script>    
