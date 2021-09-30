@@ -49,3 +49,59 @@ comodin = { type: 'Wildcard' };
 let someObject: object = { type: 'A wonderful object', phrase: "let's take an objective look at my object..." };
 
 
+// funciones
+function add(a: number, b: number): number {
+    return a + b;
+};
+
+const sum = add(4, 6);
+
+function createAdder(a: number): (number) => number {
+    return function (b: number) {
+        return a + b;
+    }
+}
+
+const addFour = createAdder(4);
+const fourPlus6 = addFour(6);
+console.log(fourPlus6);
+
+function fullName(firstName: string, lastName: string = 'Smith'): string {
+    return `${firstName} ${lastName}`;
+};
+
+const myName = fullName('Tomás', 'Elizondo');
+console.log(myName)
+
+// interfaces --> contratos de como deben ser los objetos.
+enum Color {
+    Rojo2 = 'Rojo',
+    Verde2 = 'Verde'
+}
+
+interface Rectangulo {
+    alto: number,
+    ancho: number,
+    color: Color,
+};
+
+let rec: Rectangulo = {
+    alto: 4,
+    ancho: 6,
+    color: Color.Rojo2,
+};
+
+function area(r: Rectangulo) {
+    return r.alto * r.ancho;
+}
+
+const areaRect = area(rec);
+console.log(areaRect);
+
+
+rec.toString = function() {
+    return `Un rectángulo ${this.color}`
+}
+
+
+console.log(rec.toString());
