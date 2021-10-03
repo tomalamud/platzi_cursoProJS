@@ -100,7 +100,7 @@ console.log(areaRect);
 
 
 rec.toString = function() {
-    return `Un rectángulo ${this.color}`
+    return this.color ? `Un rectángulo ${this.color}` : 'Un rectángulo';
 }
 
 

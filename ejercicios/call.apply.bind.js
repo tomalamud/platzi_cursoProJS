@@ -32,3 +32,4 @@ danielSaluda();
 
 const danielCamina = caminar.bind(daniel, 1000 /*el param 'oeste' podría estar acá tambn*/);
 danielCamina('oeste');
+
