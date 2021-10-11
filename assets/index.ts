@@ -1,12 +1,13 @@
 import MediaPlayer from './MediaPlayer';
 import AutoPlay from './plugins/AutoPlay';
 import AutoPause from './plugins/AutoPause';
+import Ads from './plugins/Ads';
 
 // object from class
 const video1 = document.querySelector('#firstVideo');
 const player = new MediaPlayer({ 
     med: video1, 
-    plugins: [ new AutoPlay(), new AutoPause() ] 
+    plugins: [ new AutoPlay(), new AutoPause(), new Ads() ] 
 });
 
 // button interactivity
